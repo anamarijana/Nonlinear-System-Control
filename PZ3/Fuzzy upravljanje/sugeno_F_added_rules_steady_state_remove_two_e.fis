@@ -1,0 +1,49 @@
+[System]
+Name='sugeno_F_added_rules_steady_state_remove_two_e'
+Type='sugeno'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=9
+AndMethod='prod'
+OrMethod='probor'
+ImpMethod='prod'
+AggMethod='sum'
+DefuzzMethod='wtaver'
+
+[Input1]
+Name='e'
+Range=[-0.0137 0.2187]
+NumMFs=3
+MF1='N':'trimf',[-0.1299 -0.0137 0]
+MF2='Z':'trimf',[-0.0001 0 0.0001]
+MF3='P':'trimf',[0 0.2187 0.3349]
+
+[Input2]
+Name='ed'
+Range=[-7.8663 7.8663]
+NumMFs=3
+MF1='N':'trimf',[-14.4203 -7.8663 -1.3123]
+MF2='Z':'trimf',[-6.554 0 6.554]
+MF3='P':'trimf',[1.3123 7.8663 14.4203]
+
+[Output1]
+Name='F'
+Range=[0 3.2121]
+NumMFs=5
+MF1='zero':'constant',[0]
+MF2='small':'constant',[1.6044]
+MF3='optimal':'constant',[3.2089]
+MF4='medium':'constant',[3.2105]
+MF5='large':'constant',[3.2121]
+
+[Rules]
+1 1, 1 (1) : 1
+1 3, 3 (1) : 1
+2 1, 2 (1) : 1
+2 2, 3 (1) : 1
+2 3, 4 (1) : 1
+3 1, 3 (1) : 1
+3 3, 5 (1) : 1
+1 0, 1 (1) : 1
+3 0, 5 (1) : 1
